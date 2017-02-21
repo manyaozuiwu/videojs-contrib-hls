@@ -1,69 +1,174 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>videojs-contrib-hls Demo</title>
-  <link href="/node_modules/video.js/dist/video-js.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    .info {
-      background-color: #eee;
-      border: thin solid #333;
-      border-radius: 3px;
-      padding: 0 5px;
-      margin: 20px 0;
-    }
-    input {
-      margin-top: 15px;
-      min-width: 450px;
-      padding: 5px;
-    }
-  </style>
-
+﻿<!DOCTYPE html>
+<html lang="zh-cn" style="width: 100%; height: 100%; overflow: hidden;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>PartyMix</title>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="full-screen" content="yes">
+     <meta name="x5-fullscreen" content="true">
+    <link rel="stylesheet" href="http://www.bootcss.com/p/buttons/css/buttons.css">
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	 <style type="text/css">
+	  body{
+	          overflow-x: hidden;
+	          overflow-y: hidden;
+          }
+     </style>
+	 <meta name="description" content="LET IT BE !!!">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		body{ background-color: #000000; }
+			.covervid-wrapper {
+				position: absolute;
+			    top: 0; left: 0;
+			    width: 100%;
+			    height: 100%;
+			}
+			.github-link {
+				position: absolute;rgba(255, 255, 255, 0.13)
+				top: 20px;
+				right: 20px;
+				opacity: 0.15;
+				-webkit-transition: 0.4s all ease;
+				-moz-transition: 0.4s all ease;
+				transition: 0.4s all ease;
+			}
+			.github-link:hover {
+				opacity: 0.4;
+			}
+			.fd{ position: absolute; top: 30%; color: rgba(255, 255, 255, 0.78); font-size: 40px; width: 100%; text-align: center; font-family: Gotham, "Helvetica Neue", Helvetica, shojo, sans-serif; }
+			.fd p{font-size: 14px; }
+			
+			
+			@font-face{
+			font-family:'shojo';
+			src:url('shojo.ttf')format('truetype');
+			}
+		</style>
+		<style type="text/css">
+<!--
+a:link {
+ text-decoration: none;
+}
+a:visited {
+ text-decoration: none;
+}
+a:hover {
+ text-decoration: none;
+}
+a:active {
+ text-decoration: none;
+}
+-->
+</style>
+<style>
+    .qq{width:100px;height:100px;border-radius:100px}
+</style>		
 </head>
-<body>
-  <div class="info">
-    <p>The video below is an <a href="https://developer.apple.com/library/ios/documentation/networkinginternet/conceptual/streamingmediaguide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008332-CH1-SW1">HTTP Live Stream</a>. On desktop browsers other than Safari, the HLS plugin will polyfill support for the format on top of the video.js Flash tech.</p>
-    <p>Due to security restrictions in Flash, you will have to load this page over HTTP(S) to see the example in action.</p>
-  </div>
-  <video id="videojs-contrib-hls-player" class="video-js vjs-default-skin" controls>
-    <source src="http://solutions.brightcove.com/jwhisenant/hls/apple/bipbop/bipbopall.m3u8" type="application/x-mpegURL">
-  </video>
+<body style="width: 100%; height: 100%; overflow: hidden;"  onselectstart="return false" >
+ <div class="covervid-wrapper">
 
-  <form id=load-url>
-    <label>
-      Video URL:
-      <input id=url type=url value="http://solutions.brightcove.com/jwhisenant/hls/apple/bipbop/bipbopall.m3u8">
-    </label>
-    <button type=submit>Load</button>
-  </form>
-  <ul>
-    <li><a href="/test/">Run unit tests in browser.</a></li>
-    <li><a href="/docs/api/">Read generated docs.</a></li>
-    <li><a href="/examples">Browse Examples</a></li>
-  </ul>
+			<video class="covervid-video" autoplay loop > 
+				<source src="http://221.228.226.5/3/q/b/f/s/qbfsaohtqvtspmvgyqfvkzxzcvgcrp/he.yinyuetai.com/8ABF01398CC629DAE4F7E8D971C7FA28.flv" type="video/mp4"><!-- 这里填写音乐外链，如果没有找我来要QQ297902515 -->
+				<!-- (●'◡'●) -->
+			</video>
+                        <div style="position:absolute;top:0;right:50px;height:100px;width:50px"><a target="_blank" href="//shang.qq.com" style="color:#FFF;font-family:'shojo'; font-weight:bold;"><P>QQ群275263492<P/></a></div>
+			<div style="position:absolute;top:0;right:130px;height:100px;width:50px"><a href="http://user.qzone.qq.com/"  style="color:#FFF;font-family:'shojo'; font-weight:bold;"><P>QQ空间<P/></a></div>
+			<div style="position:absolute;top:0;right:210px;height:100px;width:50px"><a href="http://BLOG.HAC-KER.NET/ "  style="color:#FFF;font-family:'shojo'; font-weight:bold;"><P>BLOG<P/></a></div>
+			<div style="position:absolute;top:0;right:290px;height:100px;width:50px"><a style="color:#FFF;font-family:'shojo'; font-weight:bold;"><P><P/></a></div>	
+			<div class="fd">
+<center>
 
-  <script src="/node_modules/video.js/dist/video.js"></script>
-  <script src="/dist/videojs-contrib-hls.js"></script>
-  <script>
-    (function(window, videojs) {
-      var player = window.player = videojs('videojs-contrib-hls-player');
+<br>
+</center>
+			<a onclick="kaishi()"> <span style="font-family:'shojo'; font-weight:bold;">BLOG.HAC-KER.NET</span>
+<br>
 
-      // hook up the video switcher
-      var loadUrl = document.getElementById('load-url');
-      var url = document.getElementById('url');
-      loadUrl.addEventListener('submit', function(event) {
-        event.preventDefault();
-        player.src({
-          src: url.value,
-          type: 'application/x-mpegURL'
-        });
-        return false;
-      });
-    }(window, window.videojs));
-  </script>
-</body>
-</html>
+<br><br>
+			<p><a href="http://starhub.singsi.net/"  target="view_window" class="button button-glow button-border button-rounded button-highlight">点击成为**的粉丝吧</a></p><a href="tencent://message/?uin=297902515&Site=&Menu=yes"><button class="button button-glow button-border button-circle button-action button-jumbo"><i class="fa fa-thumbs-up"></i></button>
+			</div>		
+			<div style="position:absolute;top:90%;right:50%;height:10px;width:600px"><a href="http://www.miitbeian.gov.cn" target="_black" style="color:#FFF;font-family:'shojo'; font-weight:bold;"><P><font face="微软雅黑">© CopyRight 2015-2016, BLOG.HAC-KER.NET, <script language="javascript" type="text/javascript" src="http://js.users.51.la/19018743.js"></script>
+<noscript><a href="http://www.51.la/?19018743" target="_blank"><img alt="" src="http://img.users.51.la/19018743.asp" style="border:none" /></a></noscript><br><P/></a></div><!--  --><!--  -->	<!--  -->	
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/covervid.js"></script>
+		<script type="text/javascript">
+			$('.covervid-video').coverVid(1920, 1080);
+		</script>
+    <script src="js/jquery.js"></script>
+    <script src="js/acgface.scrollPage.min.js"></script>
+    <script src="js/index.min.js"></script>
+<script>  
+    function kaishi()  
+    {  
+  
+  
+        var docElm = document.documentElement;  
+        //W3C   
+        if (docElm.requestFullscreen) {  
+            docElm.requestFullscreen();  
+        }  
+            //FireFox   
+        else if (docElm.mozRequestFullScreen) {  
+            docElm.mozRequestFullScreen();  
+        }  
+            //Chrome等   
+        else if (docElm.webkitRequestFullScreen) {  
+            docElm.webkitRequestFullScreen();  
+        }  
+            //IE11   
+        else if (elem.msRequestFullscreen) {  
+            elem.msRequestFullscreen();  
+        }  
+    }  
+  
+    function guanbi() {  
+  
+  
+        if (document.exitFullscreen) {  
+            document.exitFullscreen();  
+        }  
+        else if (document.mozCancelFullScreen) {  
+            document.mozCancelFullScreen();  
+        }  
+        else if (document.webkitCancelFullScreen) {  
+            document.webkitCancelFullScreen();  
+        }  
+        else if (document.msExitFullscreen) {  
+            document.msExitFullscreen();  
+        }  
+    }  
+  
+  
+  
+  
+    document.addEventListener("fullscreenchange", function () {  
+          
+        fullscreenState.innerHTML = (document.fullscreen) ? "" : "not ";  
+    }, false);  
+     
+  
+      
+    document.addEventListener("mozfullscreenchange", function () {  
+         
+        fullscreenState.innerHTML = (document.mozFullScreen) ? "" : "not ";  
+    }, false);  
+      
+  
+     
+    document.addEventListener("webkitfullscreenchange", function () {  
+          
+        fullscreenState.innerHTML = (document.webkitIsFullScreen) ? "" : "not ";  
+    }, false);  
+      
+    document.addEventListener("msfullscreenchange", function () {  
+          
+        fullscreenState.innerHTML = (document.msFullscreenElement) ? "" : "not ";  
+    }, false);  
+  
+  
+  
+  
+</script>  
+</body></html>
